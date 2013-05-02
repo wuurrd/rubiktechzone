@@ -139,8 +139,8 @@
 \begin{frame}
   \begin{itemize}
     \item A permutation group is a group where the elements are permutations, and the operation is composition.
-    \item The symmetric group $S_n$ is the group who
-    \item Cayley's Theorem: (Zone out now!) Any group $|G|=n$ is isomorphic to a subgroup of $S_n$.
+    \item The symmetric group $S_n$ is the group of permutation of n elements.
+    \item Cayley's Theorem: (Zone out now!) Any group $G$ where $|G|=n$ is isomorphic to a subgroup of $S_n$.
   \end{itemize}
 \end{frame}
 
@@ -185,10 +185,10 @@
     \item For this talk we consider a very simple algorithm often used for blind solving.
     \item The algorithm splits solving into four steps. Each step in the solve only changes cubies in the subgroup related to that step
       \begin{itemize}
-      \item Permute edges (Subgroup permuting edges while maintaining orientation)
-      \item Permute corners (Subgroup permuting corners while maintaining orientation)
-      \item Orient edges (Subgroup orienting edges while maintaining permutation)
-      \item Orient corners (Subgroup orienting corners while maintaining permutation)
+      \item Edge permutation (Subgroup permuting edges while maintaining orientation)
+      \item Corner permutation (Subgroup permuting corners while maintaining orientation)
+      \item Edge orientation (Subgroup orienting edges while maintaining permutation)
+      \item Corner orientation (Subgroup orienting corners while maintaining permutation)
       \end{itemize}
     \item The cube is solved
   \end{itemize}
@@ -197,7 +197,10 @@
 \subsection{Permute edges}
 \begin{frame}
   \begin{itemize}
-  \item foo
+  \item Not all face turns are valid when permuting edges (which follows from the idea that this is a subgroup).
+  \item Allowed turns: 
+  \item Algorithm to permute three edges:
+  \item
   \end{itemize}
 \end{frame}
 \end{document}
