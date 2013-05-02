@@ -93,6 +93,7 @@
 \end{frame}
 
 \section{Group Theory}
+\subsection{Groups}
 \begin{frame}
   A group is a mathematical construct consisting of a set and an operation satisfying the following axioms:
   \begin{itemize}
@@ -104,34 +105,99 @@
 \end{frame}
 
 \begin{frame}
-  Example: The hours on a 12-hour clock forms a group under addition (and is denoted $ \mathbb{Z} / 12\mathbb{Z}$ or $\mathbb{Z}_{12}$ for short)
+  Example: The hours on a 12-hour clock forms a group $G$ under addition (and is denoted $ \mathbb{Z} / 12\mathbb{Z}$ or $\mathbb{Z}_{12}$ for short)
   \begin{itemize}
     \item 0 is the identity element
-    \item Set {0,1,2,3,4,5,6,7,8,9,10,11}
+    \item Set \{0,1,2,3,4,5,6,7,8,9,10,11\} has 12 elements ($|G| = 12$)
     \item Operation is + modulo 12
+  \end{itemize}
+  
+\end{frame}
+
+\subsection{Subgroups}
+\begin{frame}
+  \begin{itemize}
+    \item A subgroup of a group is a construct using the same operation, but a subset of the elements that will still maintain the group axioms.
+    \item Example: every 4th hour on a 12-hour clock
+    \item Operation is + modulo 12
+    \item Set \{0, 4, 8, 12 \}
+  \end{itemize}
+\end{frame}
+
+\subsection{Abelian Groups}
+\begin{frame}
+  Here for completeness, feel free to zone out for this slide.
+  \begin{itemize}
+    \item A commutative ($a * b = b * a, a, b \in G$) group is known as an Abelian group.
+    \item Abelian groups can be generated from one member of the group (written $G = \{ a^n, n \in \{0, 1, \hdots \}$).
+    \item A subgroup of a non-commutative group may be Abelian.
+  \end{itemize}
+\end{frame}
+
+\subsection{Permutation Groups}
+
+\begin{frame}
+  \begin{itemize}
+    \item A permutation group is a group where the elements are permutations, and the operation is composition.
+    \item The symmetric group $S_n$ is the group who
+    \item Cayley's Theorem: (Zone out now!) Any group $|G|=n$ is isomorphic to a subgroup of $S_n$.
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{The Rubik's Group}
+  Even and odd permutations
   \begin{itemize}
-    \item 6 different colors
-    \item The group representing the Rubik's cube ($ \mathbf{R} $) is a group where the elements are all possible permutations of the Rubik's cube, and the operation is concatenation of these permutations.
+    \item We can write permutations in cycle notation. 
+    \item $(123)(45)$ means move 1 to 2, 2 to 3, 3 to 1, 4 to 5, and 5 to 4.
+    \item Every permutation can be written as a cycle, and every cycle of length n can be written as a product of (n-1) 2-cycles.
+    \item $(123) = (12)(13)$
+    \item The product of an even number of 2-cycles is known as an even permutation, and an odd number is known as an odd permutation.
+    \item Order: Writing a permutation like this tells us how many times it needs to be applied to get to an unpermuted state (the order), e.g. (123) must be applied 3 times
   \end{itemize}
 \end{frame}
 
 \section{The Rubik's Group}
+\subsection{The Rubik's Group}
 \begin{frame}
-  Any one permutation of the cube if applied enough times (order of the subgroup) will return you to your original position
+  \frametitle{The Rubik's Group}
   \begin{itemize}
-    \item 
+    \item The group representing the Rubik's cube ($ \mathbf{R} $) is a group where the elements are all possible permutations of the Rubik's cube, and the operation is concatenation of these permutations.
+    \item The Rubik's group is not Abelian: e.g. $FU != UF$
+    \item Every permutation in the Rubik's group is an even permutation.
   \end{itemize}
 \end{frame}
 
+\subsection{Even Permutations}
 \begin{frame}
   \begin{itemize}
-    \item
+    \item Any face turn will permute 8 elements (4 edges, and 4 vertices). Naming them 1 to 4 and A to D we get: $(1234)(ABCD) = (12)(13)(14)(AB)(AC)(AD)$, which is an even permutation
+    \item Any combination of $n$ even permutations is even.
+    \item Thus, all permutations of the rubik's cube are even permutations
   \end{itemize}
 \end{frame}
 
+\section{Solving the Rubik's cube}
+
+\subsection{Subgroups}
+\begin{frame}
+  \begin{itemize}
+    \item The concepts behind solving the Rubik's cube all involve splitting the solution of the Rubik's group into subgroups.
+    \item For this talk we consider a very simple algorithm often used for blind solving.
+    \item The algorithm splits solving into four steps. Each step in the solve only changes cubies in the subgroup related to that step
+      \begin{itemize}
+      \item Permute edges (Subgroup permuting edges while maintaining orientation)
+      \item Permute corners (Subgroup permuting corners while maintaining orientation)
+      \item Orient edges (Subgroup orienting edges while maintaining permutation)
+      \item Orient corners (Subgroup orienting corners while maintaining permutation)
+      \end{itemize}
+    \item The cube is solved
+  \end{itemize}
+\end{frame}
+
+\subsection{Permute edges}
+\begin{frame}
+  \begin{itemize}
+  \item foo
+  \end{itemize}
+\end{frame}
 \end{document}
