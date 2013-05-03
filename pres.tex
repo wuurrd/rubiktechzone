@@ -176,8 +176,28 @@
   \end{itemize}
 \end{frame}
 
-\section{Solving the Rubik's cube}
+\subsection{Random rearrangement of the cube}
+\begin{frame}
+  Pulling apart and putting a Rubik's cube together at random can be done in:
+  \begin{itemize}
+    \item 8 Corners $\rightarrow 8!$ permutations, and $3^8$ orientations
+    \item 12 Edges $\rightarrow 12!$ permutations, and $2^{12}$ orientations
+    \item $\rightarrow 519024039293878272000$ different ways
+    \end{itemize}
+\end{frame}
 
+\begin{frame}
+  Pulling apart and putting a Rubik's cube together at random can be done to create a solvable cube in:
+  \begin{itemize}
+    \item $\frac{1}{3}$ will have corner rotation correct
+    \item $\frac{1}{2}$ will have edge rotation correct
+    \item $\frac{1}{2}$ will have correct cubie-rearrangement TODO
+    \item $\frac{1}{12}$ times will be put together correctly
+    \end{itemize}
+\end{frame}
+
+\subsection{
+\section{Solving the Rubik's cube}
 \subsection{Subgroups}
 \begin{frame}
   \begin{itemize}
@@ -185,22 +205,49 @@
     \item For this talk we consider a very simple algorithm often used for blind solving.
     \item The algorithm splits solving into four steps. Each step in the solve only changes cubies in the subgroup related to that step
       \begin{itemize}
-      \item Edge permutation (Subgroup permuting edges while maintaining orientation)
-      \item Corner permutation (Subgroup permuting corners while maintaining orientation)
-      \item Edge orientation (Subgroup orienting edges while maintaining permutation)
       \item Corner orientation (Subgroup orienting corners while maintaining permutation)
+      \item Edge orientation (Subgroup orienting edges while maintaining permutation)
+      \item Corner permutation (Subgroup permuting corners while maintaining orientation)
+      \item Edge permutation (Subgroup permuting edges while maintaining orientation)
       \end{itemize}
-    \item The cube is solved
+    \item The cube is solved! (Zone out now)
   \end{itemize}
 \end{frame}
 
-\subsection{Permute edges}
+\subsection{Edge Permutation}
 \begin{frame}
   \begin{itemize}
-  \item Not all face turns are valid when permuting edges (which follows from the idea that this is a subgroup).
-  \item Allowed turns: 
-  \item Algorithm to permute three edges:
-  \item
+  \item Working on the full Rubik's group.
+  \item Algorithm to permute three edges clockwise: $L' U L' U' L' U' L' U L U L2$
+  \item Algorithm to permute three edges counter-clockwise: $R'U (R'U')2 R'U RU R2$
   \end{itemize}
 \end{frame}
+
+\subsection{Corner Permutation}
+\begin{frame}
+  \begin{itemize}
+    \item Working on a subgroup of the Rubik's group where all edges are in the correct spots.
+    \item Algorithm to permute three corners clockwise: $L' B L' F2 L B' L' F2 L2$
+    \item Algorithm to permute three corners counter-clockwise: $R B' R F2 R' B R F2 R2$
+  \end{itemize}
+\end{frame}
+
+\subsection{Edge Orientation}
+\begin{frame}
+  \begin{itemize}
+    \item Working on a subgroup of the Rubik's group where all edges and corners are in the correct spots.
+    \item Algorithm to flip two edges: $(M'U)3 U (MU)3 U$
+    \item Algorithm to flip four edges: $(M'U)4 (MU)4 $
+  \end{itemize}
+\end{frame}
+
+\subsection{Corner Orientation}
+\begin{frame}
+  \begin{itemize}
+    \item Working on a subgroup of the Rubik's group where all edges are correct orientation and spot, and all corners are in the correct spots.
+    \item Algorithm to flip two corners clockwise: $(L' U' L U' L' U2 L)$
+    \item Algorithm to flip two corners counter-clockwise: $(R U R' U R U2 R')$
+  \end{itemize}
+\end{frame}
+
 \end{document}
